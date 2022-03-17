@@ -12,13 +12,13 @@ export interface Props {
 
 export const ProductImage = ({ image, className, style }: Props) => {
 
-    const { product: { img } } = useContext(ProductContext);
+    const { product } = useContext(ProductContext);
     let imgToShow: string;
 
     if ( image ) {
         imgToShow = image;
-    } else if ( img ) {
-        imgToShow = img;
+    } else if ( product.img ) {
+        imgToShow = product.img;
     } else {
         imgToShow = noImage;
     };

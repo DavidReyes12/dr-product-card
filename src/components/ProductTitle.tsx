@@ -12,14 +12,14 @@ export interface Props {
 
 export const ProductTitle = ({ title, className, style }: Props) => {
 
-    const { product: { title: titleContext } } = useContext(ProductContext);
+    const { product } = useContext(ProductContext);
 
     return (
         <span 
             className={ `${ styles.productDescription } ${ className }` } 
             style={ style }
         >
-             { title ? title : titleContext } 
+             { title ? title : product.title } 
         </span>
     );
 };
